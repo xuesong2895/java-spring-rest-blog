@@ -26,7 +26,6 @@ public class Post {
     private Date date;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="author")
     private Author author;
 
     public Post() {
