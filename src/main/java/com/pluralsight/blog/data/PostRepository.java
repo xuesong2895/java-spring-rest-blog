@@ -5,6 +5,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.data.rest.core.annotation.RestResource;
 
+import java.util.List;
+
 @Component
-@RestResource
-public interface PostRepository extends JpaRepository<Post, Long> {}
+public interface PostRepository extends JpaRepository<Post, Long> {
+    @RestResource(rel="contains-Title", path="containsTitle")
+    public List<Post> findByTitleContaining(String title);
+
+}
+
+
+
+
+
